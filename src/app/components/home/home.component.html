@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <a [routerLink]="['/add-task']" routerLinkActive="router-link-active" class="btn btn-primary">Add New Tak</a>
+    </div>
+    <div *ngIf="taskserv.tasks.length == 0">
+        <p class="alert alert-primary">
+            There is no task
+        </p>
+    </div>
+
+    <div *ngIf="taskserv.tasks.length != 0">
+
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of taskserv.tasks; index as i">
+                <a [routerLink]="['/task', i]" routerLinkActive="router-link-active">
+                    {{task.title}}
+                </a>
+                <button class="btn btn-danger" (click)="deleteTask(i)">Delete</button>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<button *ngIf="x==1"> add</button>
+

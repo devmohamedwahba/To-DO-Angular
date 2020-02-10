@@ -1,0 +1,4 @@
+<input #taskTitle type="text" name="" id="" class="form-control" placeholder="Task Title">
+<textarea #taskDesc class="form-control" name="" id="" cols="30" rows="10" placeholder="Task Description"></textarea>
+<button class="btn btn-primary" (click)="saveTask(taskTitle,taskDesc)">save</button>
+<a href="" class="btn btn-danger" [routerLink]="['/']">cancel</a>
